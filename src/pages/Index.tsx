@@ -35,7 +35,7 @@ const Index = () => {
     "Records Management",
     "Shorthand",
     "Business English",
-    "Customer Relations",
+    "Relations",
     "Office Technology",
   ];
 
