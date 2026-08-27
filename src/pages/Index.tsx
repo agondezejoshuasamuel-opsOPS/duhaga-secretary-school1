@@ -40,10 +40,10 @@ const Index = () => {
   ];
 
   const events = [
-    { date: "Jan 15, 2025", title: "New Term Begins", type: "Academic" },
-    { date: "Feb 10, 2025", title: "Career Fair", type: "Event" },
-    { date: "Mar 5, 2025", title: "Mid-Term Exams", type: "Academic" },
-    { date: "Apr 20, 2025", title: "Guest Speaker Series", type: "Event" },
+    { date: "Jan 15, 2026", title: "New Term Begins", type: "Academic" },
+    { date: "Feb 10, 2026", title: "Career Fair", type: "Event" },
+    { date: "Mar 5, 2026", title: "Mid-Term Exams", type: "Academic" },
+    { date: "Apr 20, 2026", title: "Guest Speaker Series", type: "Event" },
   ];
 
   const gallery = [
