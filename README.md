@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# DUHAGA Secretary School
 
-## Project info
+A modern, responsive web presence for **DUHAGA Secretary School** — *"Habwa Ruhanga n'Ihanga Lyaitu"*.
 
-**URL**: https://lovable.dev/projects/496daef0-81b4-46ca-9fb7-5377a1904c54
+## About
 
-## How can I edit this code?
+This project showcases the school's academic programs, facilities, calendar events, and enrollment process. It is designed with a professional academic aesthetic using the school's brand colors: deep blue, fresh green, and gold/amber.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Hero Section** — School name, motto, and call-to-action.
+- **About & Activities** — Academic excellence, practical training, and professional development highlights.
+- **Curriculum** — Overview of secretarial and office-management subjects.
+- **Events Calendar** — Upcoming academic and school events for 2026.
+- **Facility Gallery** — Photos of the buildings, compound, classrooms, and computer laboratory.
+- **Enrollment CTA** — Direct link to the online application form.
+- **Apply Page** (`/apply`) — A validated application form for prospective students.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/496daef0-81b4-46ca-9fb7-5377a1904c54) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Router](https://reactrouter.com/)
+- [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) for form validation
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [Node.js](https://nodejs.org/) (recommended via [nvm](https://github.com/nvm-sh/nvm))
+- npm or bun
 
-Follow these steps:
+### Run Locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1. Clone the repo
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# 2. Enter the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# 3. Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+  pages/
+    Index.tsx       # Landing page
+    Apply.tsx       # Application form
+    NotFound.tsx    # 404 page
+  components/       # Reusable UI components
+  integrations/     # Backend/client integrations
+  assets/           # Images and static assets
+public/             # Public static files
+```
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is built with Lovable. To publish:
 
-## How can I deploy this project?
+1. Open the [Lovable project](https://lovable.dev/projects/496daef0-81b4-46ca-9fb7-5377a1904c54).
+2. Click **Share → Publish**.
 
-Simply open [Lovable](https://lovable.dev/projects/496daef0-81b4-46ca-9fb7-5377a1904c54) and click on Share -> Publish.
+## Custom Domain
 
-## Can I connect a custom domain to my Lovable project?
+You can connect a custom domain via **Project > Settings > Domains**. Learn more in the [Lovable docs](https://docs.lovable.dev/features/custom-domain#custom-domain).
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© DUHAGA Secretary School. All rights reserved.
