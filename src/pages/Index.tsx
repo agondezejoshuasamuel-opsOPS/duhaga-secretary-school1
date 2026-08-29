@@ -1,4 +1,5 @@
 import { Calendar, BookOpen, Users, GraduationCap, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import heroImage from "@/assets/hero-school.jpg";
@@ -99,12 +100,16 @@ const Index = () => {
             Empowering students with professional secretarial skills for a successful career in office management and administration.
           </p>
           <div className="flex gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="bg-secondary hover:bg-secondary-light text-secondary-foreground shadow-elegant">
-              Apply Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Learn More
-            </Button>
+            <Link to="/apply">
+              <Button size="lg" className="bg-secondary hover:bg-secondary-light text-secondary-foreground shadow-elegant">
+                Apply Now
+              </Button>
+            </Link>
+            <a href="#about">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+                Learn More
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -234,9 +239,11 @@ const Index = () => {
               <span>Kampala, Uganda</span>
             </div>
           </div>
-          <Button size="lg" className="mt-8 bg-white text-secondary hover:bg-white/90 shadow-elegant">
-            Start Your Application
-          </Button>
+          <Link to="/apply">
+            <Button size="lg" className="mt-8 bg-white text-secondary hover:bg-white/90 shadow-elegant">
+              Start Your Application
+            </Button>
+          </Link>
         </div>
       </section>
 
