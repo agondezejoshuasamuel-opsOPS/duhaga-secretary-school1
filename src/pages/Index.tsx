@@ -1,4 +1,5 @@
-import { Calendar, BookOpen, Users, GraduationCap, MapPin, Phone, Mail } from "lucide-react";
+import { useState } from "react";
+import { Calendar, BookOpen, Users, GraduationCap, MapPin, Phone, Mail, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,16 @@ import classroomImage from "@/assets/classroom.jpg";
 import laboratoryImage from "@/assets/laboratory.jpg";
 
 const Index = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuItems = [
+    { label: "About", href: "#about" },
+    { label: "Activities", href: "#activities" },
+    { label: "Curriculum", href: "#curriculum" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Enrollment", href: "#enrollment" },
+  ];
+
   const activities = [
     {
       icon: BookOpen,
@@ -57,8 +68,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md z-50 border-b shadow-sm">
+        <div className="container mx-auto px-4 min-h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-8 w-8 text-primary" />
             <div>
@@ -66,17 +77,51 @@ const Index = () => {
               <p className="text-xs text-muted-foreground">Secretary School</p>
             </div>
           </div>
-          <div className="hidden md:flex gap-6">
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#activities" className="text-foreground hover:text-primary transition-colors">Activities</a>
-            <a href="#curriculum" className="text-foreground hover:text-primary transition-colors">Curriculum</a>
-            <a href="#gallery" className="text-foreground hover:text-primary transition-colors">Gallery</a>
-            <a href="#enrollment" className="text-foreground hover:text-primary transition-colors">Enrollment</a>
+          <div className="hidden md:flex items-center gap-7" aria-label="Main navigation">
+            {menuItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button asChild className="bg-primary hover:bg-primary-light text-primary-foreground">
+              <a href="#enrollment">Contact Us</a>
+            </Button>
           </div>
-          <Button className="bg-primary hover:bg-primary-light text-primary-foreground">
-            Contact Us
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
+        {menuOpen && (
+          <div className="md:hidden border-t bg-background px-4 py-4 shadow-card">
+            <div className="container mx-auto flex flex-col gap-1" aria-label="Mobile navigation">
+              {menuItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-md px-3 py-3 font-medium text-foreground hover:bg-muted hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button asChild className="mt-2 w-full bg-primary hover:bg-primary-light text-primary-foreground">
+                <a href="#enrollment" onClick={() => setMenuOpen(false)}>Contact Us</a>
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
